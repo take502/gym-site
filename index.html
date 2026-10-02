@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT-START | 理想の自分へ、最短距離で突き進め。</title>
+    <!-- Tailwind CSS (ユーティリティスタイルの読み込み) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonGreen: '#00FF66',
+                        neonOrange: '#FF5500',
+                        darkBg: '#08080A',
+                        cardBg: '#121218',
+                        accentBlue: '#00CCFF'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        heading: ['Chakra Petch', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;0,800;1,700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- カスタムCSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- ヘッダー -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- ロゴ -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neonGreen to-emerald-600 flex items-center justify-center font-heading font-extrabold text-black text-xl shadow-[0_0_15px_rgba(0,255,102,0.5)] group-hover:scale-105 transition-transform">
+                    FS
+                </div>
+                <span class="font-heading font-extrabold text-2xl tracking-wider text-white italic">
+                    FIT-<span class="text-neonGreen">START</span>
+                </span>
+            </a>
+
+            <!-- PCナビゲーション -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#features" class="hover:text-neonGreen transition-colors py-1">特徴・強み</a>
+                <a href="#plans" class="hover:text-neonGreen transition-colors py-1">料金プラン</a>
+                <a href="#faq" class="hover:text-neonGreen transition-colors py-1">よくある質問</a>
+                <a href="#contact" class="btn-neon px-6 py-2.5 rounded-full font-bold text-black bg-neonGreen hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(0,255,102,0.4)]">
+                    無料体験予約
+                </a>
+            </nav>
+
+            <!-- スマホハンバーガーボタン -->
+            <button id="menu-btn" class="md:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none" aria-label="Toggle Menu">
+                <span class="bar w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="bar w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="bar w-6 h-0.5 bg-white transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <!-- スマホ用モバイルメニュー -->
+        <div id="mobile-menu" class="fixed inset-0 bg-darkBg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300 md:hidden z-40">
+            <a href="#features" class="mobile-link text-2xl font-bold hover:text-neonGreen transition-colors">特徴・強み</a>
+            <a href="#plans" class="mobile-link text-2xl font-bold hover:text-neonGreen transition-colors">料金プラン</a>
+            <a href="#faq" class="mobile-link text-2xl font-bold hover:text-neonGreen transition-colors">よくある質問</a>
+            <a href="#contact" class="mobile-link text-xl font-bold text-black bg-neonGreen px-8 py-3 rounded-full shadow-[0_0_20px_rgba(0,255,102,0.5)]">
+                無料体験予約
+            </a>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-8 overflow-hidden">
+        <!-- 背景デザイン要素 -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-neonGreen/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-0 w-96 h-96 bg-neonOrange/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- キャッチコピー -->
+            <div class="space-y-6 text-center md:text-left reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neonGreen/10 border border-neonGreen/30 text-neonGreen text-xs sm:text-sm font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-neonGreen animate-ping"></span>
+                    マンツーマン完全個室・結果コミット型
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                    理想の身体へ、<br>
+                    <span class="text-gradient">最短距離</span>で突き進め。
+                </h1>
+                <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+                    専属トレーナーによる完全オーダーメイドプログラム × 最先端栄養学。<br>
+                    リバウンド率わずか1.8%の実績で、あなたの限界を突破する。
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-neonGreen text-black font-extrabold text-lg shadow-[0_0_30px_rgba(0,255,102,0.5)] hover:bg-emerald-300 hover:shadow-[0_0_40px_rgba(0,255,102,0.8)] transition-all text-center">
+                        今すぐ無料体験を申し込む <i class="fa-solid font-bold fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- 実績数値 -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-800/80">
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">98.4<span class="text-neonGreen text-lg">%</span></p>
+                        <p class="text-xs text-gray-400">会員満足度</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">-8.2<span class="text-neonOrange text-lg">kg</span></p>
+                        <p class="text-xs text-gray-400">平均減量実績 (2ヶ月)</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">1,500<span class="text-accentBlue text-lg">+</span></p>
+                        <p class="text-xs text-gray-400">累計ボディメイク数</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- ヒーロービジュアル（写真画像） -->
+            <div class="relative reveal">
+                <div class="aspect-[4/5] sm:aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden relative border border-white/10 shadow-2xl">
+                    <!-- 好きな画像（または画像URL）をsrcに入れてください -->
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80" alt="FIT-START" class="w-full h-full object-cover">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-transparent to-transparent z-10"></div>
+                    
+                    <!-- 装飾グラフィックバッジ -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20 glass-card p-4 rounded-xl flex items-center gap-4 border border-white/10">
+                        <div class="w-12 h-12 rounded-full bg-neonOrange/20 flex items-center justify-center text-neonOrange text-xl flex-shrink-0">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">脂肪燃焼プログラム</p>
+                            <p class="text-sm font-bold text-white">劇的な変化を科学的アプローチで</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴・強み -->
+    <section id="features" class="py-24 px-4 sm:px-8 relative bg-cardBg/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-neonGreen font-heading text-sm font-bold tracking-widest uppercase mb-2">Features</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">FIT-STARTが選ばれる<span class="text-gradient">3つの理由</span></p>
+                <p class="text-gray-400 mt-4">単なるトレーニング指導ではありません。一生モノの「身体作りノウハウ」を提供します。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- カード 1 -->
+                <div class="glass-card p-8 rounded-2xl relative hover:-translate-y-2 transition-all duration-300 group reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-neonGreen/10 border border-neonGreen/30 flex items-center justify-center text-neonGreen text-2xl mb-6 group-hover:bg-neonGreen group-hover:text-black transition-all shadow-[0_0_15px_rgba(0,255,102,0.2)]">
+                        <i class="fa-solid fa-user-ninja"></i>
+                    </div>
+                    <span class="text-4xl font-extrabold font-heading text-gray-700 absolute top-6 right-6 group-hover:text-neonGreen/20 transition-colors">01</span>
+                    <h3 class="text-xl font-bold text-white mb-3">採用率3%の最高峰トレーナー</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        国際資格保持者や元アスリートのみで構成されたプロフェッショナル集団。解剖学・生理学に基づいた無理のない最短のフォームを個別指導します。
+                    </p>
+                </div>
+
+                <!-- カード 2 -->
+                <div class="glass-card p-8 rounded-2xl relative hover:-translate-y-2 transition-all duration-300 group reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-neonOrange/10 border border-neonOrange/30 flex items-center justify-center text-neonOrange text-2xl mb-6 group-hover:bg-neonOrange group-hover:text-black transition-all shadow-[0_0_15px_rgba(255,85,0,0.2)]">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <span class="text-4xl font-extrabold font-heading text-gray-700 absolute top-6 right-6 group-hover:text-neonOrange/20 transition-colors">02</span>
+                    <h3 class="text-xl font-bold text-white mb-3">挫折ゼロの「しっかり食べる」食事法</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        極端な糖質制限は一切行いません。あなたのライフスタイルに合わせた独自の「PFCマクロ栄養管理」で、リバウンドしにくい食事習慣を形成します。
+                    </p>
+                </div>
+
+                <!-- カード 3 -->
+                <div class="glass-card p-8 rounded-2xl relative hover:-translate-y-2 transition-all duration-300 group reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue text-2xl mb-6 group-hover:bg-accentBlue group-hover:text-black transition-all shadow-[0_0_15px_rgba(0,204,255,0.2)]">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <span class="text-4xl font-extrabold font-heading text-gray-700 absolute top-6 right-6 group-hover:text-accentBlue/20 transition-colors">03</span>
+                    <h3 class="text-xl font-bold text-white mb-3">ラグジュアリーな完全個室空間</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        他人の目を一切気にせず集中できるプライベート空間。ウェア、シューズ、タオル、高級アメニティ完備で、手ぶらで快適に通うことが可能です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- プラン・料金表 -->
+    <section id="plans" class="py-24 px-4 sm:px-8 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-neonOrange font-heading text-sm font-bold tracking-widest uppercase mb-2">Price Plan</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">明朗会計な<span class="text-gradient">料金プラン</span></p>
+                <p class="text-gray-400 mt-4">目的やペースに合わせて選べる3つのコースをご用意しています。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- ライトプラン -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-gray-500 transition-all reveal">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">ライトボディメイク</h3>
+                        <p class="text-xs text-gray-400 mb-6">運動習慣をつけたい・軽めのボディメイクに</p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-extrabold text-white font-heading">¥98,000</span>
+                            <span class="text-xs text-gray-400"> / 1ヶ月 (全8回)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 border-t border-gray-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 1回 50分 パーソナルトレーニング</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 食事アドバイス (週1回アドバイス)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> ウェア・レンタル無料</li>
+                            <li class="flex items-center gap-2 text-gray-600"><i class="fa-solid fa-xmark"></i> 毎日のLINE食事サポート</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 w-full py-3 rounded-xl border border-white/20 text-white font-bold text-center hover:bg-white hover:text-black transition-all">選択する</a>
+                </div>
+
+                <!-- スタンダードプラン（人気） -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border-2 border-neonGreen relative scale-105 shadow-[0_0_30px_rgba(0,255,102,0.15)] bg-gradient-to-b from-cardBg to-darkBg reveal">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-neonGreen text-black font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider">
+                        POPULAR
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">スタンダードチェンジ</h3>
+                        <p class="text-xs text-neonGreen mb-6">一番人気！短期間で確実に結果を出したい方に</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-white font-heading">¥188,000</span>
+                            <span class="text-xs text-gray-400"> / 2ヶ月 (全16回)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-200 border-t border-gray-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 1回 50分 パーソナルトレーニング</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 毎日のLINE個別食事指導</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> ウェア・プロテイン完全無料</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 返金保証制度対象</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 w-full py-3.5 rounded-xl bg-neonGreen text-black font-extrabold text-center hover:bg-emerald-300 shadow-[0_0_15px_rgba(0,255,102,0.4)] transition-all">一番人気で体験予約</a>
+                </div>
+
+                <!-- プレミアムプラン -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-gray-500 transition-all reveal">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">プレミアムコミット</h3>
+                        <p class="text-xs text-gray-400 mb-6">全身の劇的変化＆完全リバウンド防止</p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-extrabold text-white font-heading">¥268,000</span>
+                            <span class="text-xs text-gray-400"> / 3ヶ月 (全24回)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 border-t border-gray-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 1回 60分 ロングセッション</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 毎日のLINE食事サポート ＆ 栄養分析</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> 高級アメニティ・サプリメント支給</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-neonGreen"></i> VIP専用個室優先予約権</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 w-full py-3 rounded-xl border border-white/20 text-white font-bold text-center hover:bg-white hover:text-black transition-all">選択する</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- よくある質問 (FAQ) -->
+    <section id="faq" class="py-24 px-4 sm:px-8 relative bg-cardBg/40">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-accentBlue font-heading text-sm font-bold tracking-widest uppercase mb-2">FAQ</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white">よくある質問</p>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden border border-white/5 transition-all">
+                    <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-neonGreen transition-colors focus:outline-none">
+                        <span>Q. 運動初心者でもついていけますか？</span>
+                        <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-neonGreen"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-gray-800/50 pt-4">
+                        もちろんです！お客様の約7割が運動未経験またはジム初心者の方です。お一人おひとりの体力や柔軟性に合わせた完全オーダーメイドのメニューを作成しますのでご安心ください。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden border border-white/5 transition-all">
+                    <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-neonGreen transition-colors focus:outline-none">
+                        <span>Q. 厳しい食事制限（糖質オフなど）はありますか？</span>
+                        <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-neonGreen"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-gray-800/50 pt-4">
+                        FIT-STARTでは極端な糖質制限は行いません。「しっかりと食べて無理なく痩せる」栄養バランス（PFCバランス）をご提案し、一生続けられる健全な食習慣を身につけていただきます。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden border border-white/5 transition-all">
+                    <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-neonGreen transition-colors focus:outline-none">
+                        <span>Q. 手ぶらで通うことはできますか？</span>
+                        <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-neonGreen"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-gray-800/50 pt-4">
+                        はい、可能です！トレーニングウェア、シューズ、タオル、プロテインなど必要なものはすべて無料でご用意しております。お仕事帰りや買い物ついでに気軽にお立ち寄りいただけます。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden border border-white/5 transition-all">
+                    <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-neonGreen transition-colors focus:outline-none">
+                        <span>Q. 無料体験トレーニングでは何をしますか？</span>
+                        <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-neonGreen"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-gray-800/50 pt-4">
+                        カウンセリング（体組成測定、目標のヒアリング）30分＋お試しパーソナルトレーニング20分＋アフターカウンセリングの計約60分となります。強引な勧誘は一切ございません。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 体験予約フォーム -->
+    <section id="contact" class="py-24 px-4 sm:px-8 relative">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-neonGreen/30 relative shadow-[0_0_50px_rgba(0,255,102,0.1)] reveal">
+                <div class="text-center mb-10">
+                    <span class="bg-neonGreen/20 text-neonGreen text-xs font-bold px-3 py-1 rounded-full border border-neonGreen/40">無料 / 60分間</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">無料体験トレーニング予約</h2>
+                    <p class="text-gray-400 text-sm mt-2">無理な勧誘は一切ありません。まずはお気軽にご相談ください。</p>
+                </div>
+
+                <!-- 成功メッセージ -->
+                <div id="success-msg" class="hidden bg-emerald-500/20 border border-emerald-500 text-emerald-300 p-6 rounded-xl text-center mb-6">
+                    <i class="fa-solid fa-circle-check text-3xl mb-2"></i>
+                    <p class="font-bold text-lg">体験予約のお申し込みが完了しました！</p>
+                    <p class="text-sm opacity-80">担当者より24時間以内にメールにてご連絡いたします。</p>
+                </div>
+
+                <form id="booking-form" novalidate class="space-y-6">
+                    <!-- お名前 -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2" for="name">
+                            お名前 <span class="text-neonOrange">*</span>
+                        </label>
+                        <input type="text" id="name" class="w-full bg-darkBg/80 border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-neonGreen transition-colors" placeholder="山田 太郎">
+                        <p class="error-msg text-xs text-neonOrange mt-1 hidden"></p>
+                    </div>
+
+                    <!-- メールアドレス -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2" for="email">
+                            メールアドレス <span class="text-neonOrange">*</span>
+                        </label>
+                        <input type="email" id="email" class="w-full bg-darkBg/80 border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-neonGreen transition-colors" placeholder="example@fitstart.jp">
+                        <p class="error-msg text-xs text-neonOrange mt-1 hidden"></p>
+                    </div>
+
+                    <!-- 電話番号 -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2" for="phone">
+                            電話番号 <span class="text-neonOrange">*</span>
+                        </label>
+                        <input type="tel" id="phone" class="w-full bg-darkBg/80 border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-neonGreen transition-colors" placeholder="09012345678">
+                        <p class="error-msg text-xs text-neonOrange mt-1 hidden"></p>
+                    </div>
+
+                    <!-- 希望日時 -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2" for="date">
+                            ご希望日 <span class="text-neonOrange">*</span>
+                        </label>
+                        <input type="date" id="date" class="w-full bg-darkBg/80 border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-neonGreen transition-colors">
+                        <p class="error-msg text-xs text-neonOrange mt-1 hidden"></p>
+                    </div>
+
+                    <!-- メッセージ・ご要望 -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2" for="message">
+                            ご質問・ご要望（任意）
+                        </label>
+                        <textarea id="message" rows="3" class="w-full bg-darkBg/80 border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-neonGreen transition-colors" placeholder="気になることや解決したいお悩みがあればご記入ください"></textarea>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <button type="submit" class="w-full py-4 rounded-xl bg-neonGreen text-black font-extrabold text-lg shadow-[0_0_25px_rgba(0,255,102,0.4)] hover:bg-emerald-300 hover:shadow-[0_0_35px_rgba(0,255,102,0.7)] transition-all">
+                        予約内容を送信する
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-black border-t border-gray-900 py-12 px-4 sm:px-8 text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- ブランドロゴ -->
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded bg-neonGreen flex items-center justify-center font-heading font-extrabold text-black">FS</div>
+                <span class="font-heading font-extrabold text-xl text-white italic">FIT-<span class="text-neonGreen">START</span></span>
+            </div>
+
+            <!-- 店舗情報 -->
+            <div class="text-center md:text-left">
+                <p>〒100-0001 東京都千代田区1-1-1 FITビル 2F</p>
+                <p class="text-xs text-gray-600 mt-1">営業時間: 7:00 - 23:00 (年中無休)</p>
+            </div>
+
+            <!-- コピーライト -->
+            <p class="text-xs">&copy; 2026 FIT-START Gym Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JSファイル読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
